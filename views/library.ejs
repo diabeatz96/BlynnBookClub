@@ -11,27 +11,27 @@
 </head>
 <body>
     <%- include('./navbar.ejs') %>
-<h1 class = "text-center">Blynn's Library</h1>
+<h1 class = "text-center img-fluid"> <img src="/images/Logo.png" alt=""> </h1>
 
 
 <!-- I have opted for a forEach array method in order to display contents of each object correctly. 2/18/22 -->
 <!-- This a check for adam Branch -->
 
-<div class = "container-fluid" >
+<div class = "container" >
 <% tempBookObjects.forEach( (books) =>  {   %>
-        <div class="card m-5">
+        <div class="card m-5 bg-black">
             <div class = "row">
-            <h5 class="card-header col-8"> <%= books.name %>
+            <h5 class="card-header col-8 text-white"> <%= books.name %>
             </h5>
-                <p class="card-header col-2 "> <%= books.genre %> </p>
-                <p class="card-header col-2 "> <%= books.date %> </p>
+                <p class="card-header col-2 text-white"> <%= books.genre %> </p>
+                <p class="card-header col-2 text-white"> <%= books.date %> </p>
             </div>
 
 
-            <div class="card-body bg-danger row m-1 border border-dark border-5">
-            <div class="col-5"> <img class="img-fluid border border-warning border-3" src="<%= books.image %>" alt="Book Image"> </div>
-            <h5 class="card-title col-5 align-self-center text-white-50"> <%= books.description %> </h5>
-            <a href="#" class="btn btn-primary col-2 h-100 align-self-end">Read Reviews</a>
+            <div class="card-body row m-1 border border-white border-2">
+            <div class="col-3"> <img class="img-fluid border border-warning border-3 w-50" src="<%= books.image %>" alt="Book Image"> </div>
+            <h5 class="card-title col-7 align-self-center text-white-50 px-5"> <%= books.description %> </h5>
+            <a href="#" class="btn btn-dark col-2 h-100 align-self-end">Read Reviews</a>
             </div>
         </div>
 <% }); %>

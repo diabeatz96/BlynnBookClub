@@ -7,5 +7,22 @@ h1 {
     color: white;
 }
 
-.card-body {
+h1 img {
+    width: 20%;
+    height: 20%;
 }
+
+.img-wrapper img {
+    height:100%;
+}
+
+.card-body {
+    background-color: darkred;
+    transition: background 1s;
+}
+
+.card-body:hover {
+    background-color: dimgray;
+    background-size: cover;
+}
+
