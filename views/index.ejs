@@ -13,19 +13,19 @@
   <%- include('./navbar.ejs') %>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg1" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg1" data-slide-to="0"></li>
       <li data-target="#carouselExampleIndicators" id="#carouselSlideImg2" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" id="#carouselSlideImg3" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <!-- <img src="test-img1.jpg" class="d-block w-100" alt="Test Image number one"> -->
+        <img src="test-img1.jpg" class="d-block w-100" alt="Test Image number one">
       </div>
       <div class="carousel-item">
-        <!-- <img src="..." class="d-block w-100" alt="Test Image number two"> -->
+        <img src="test-img2.jpg" class="d-block w-100" alt="Test Image number two">
       </div>
       <div class="carousel-item">
-        <!-- <img src="..." class="d-block w-100" alt="Test Image number three"> -->
+        <img src="test-img3.jpg" class="d-block w-100" alt="Test Image number three">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -34,16 +34,31 @@
     </a>
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <!-- <span class="sr-only">Next</span> -->
+      <span class="sr-only" id="#next">Next</span>
     </a>
   </div>
 </body>
 <script>
-  const carousel = document.getElementById("#carouselSlideImg2");
-  carousel.setAttribute("class", "active");
-  // console.log(carousel.getAttribute("class"));
-  console.log(carousel.getAttribute("class"));
-  //make a loop, listen for button clicking event on next/prev then move 
-  //'active' class to consecutive carousel li.
+  //const carousel = document.getElementById(carouselAr[1]);
+  //carousel.setAttribute("class", "active");
+  //console.log(carousel.getAttribute("class"));
+  let nextButton = document.getElementById("#next");
+  nextButton.addEventListener("click", carouselClick);
+  let pos = 0;
+  function carouselClick() {
+    let carouselAr = ["#carouselSlideImg1", "#carouselSlideImg2", "#carouselSlideImg3"];
+      const carousel = document.getElementById(carouselAr[pos]);
+      carousel.setAttribute("class", "active");
+      if(pos > 0) {
+      const preCarousel = document.getElementById(carouselAr[pos-1]);
+      preCarousel.removeAttribute("class");
+      }
+      pos++;
+      if(pos == carousel.length-1) {
+        const finalCarousel = document.getElementById(carouselAr[pos]);
+        finalCarousel.removeAttribute("class");
+        pos = 0;
+      }
+  }
   </script>
 </html>
