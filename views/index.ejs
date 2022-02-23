@@ -13,9 +13,9 @@
   <%- include('./navbar.ejs') %>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg1" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg2" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg3" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -39,8 +39,9 @@
   </div>
 </body>
 <script>
-  const body = document.body;
-  const carousel = document.querySelector("li");
+  const carousel = document.getElementById("#carouselSlideImg2");
+  carousel.setAttribute("class", "active");
+  // console.log(carousel.getAttribute("class"));
   console.log(carousel.getAttribute("class"));
   //make a loop, listen for button clicking event on next/prev then move 
   //'active' class to consecutive carousel li.
