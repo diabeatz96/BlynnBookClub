@@ -25,7 +25,7 @@ const tempBookObjects = [
         author: "Patrick Süskind",
         description: "Perfume: The Story of a Murderer (German: Das Parfum: Die Geschichte eines Mörders [das paʁˈfœ̃ː diː ɡəˈʃɪçtə ˈʔaɪnəs ˈmœʁdɐs] (audio speaker iconlisten)) is a 1985 literary historical fantasy novel by German writer Patrick Süskind. The novel explores the sense of smell and its relationship with the emotional meanings that scents may have.",
         image: "https://upload.wikimedia.org/wikipedia/en/f/f5/PerfumeSuskind.jpg"
-    }
+    },
 ]
 
 router.get('/', (req, res) => {
