@@ -13,18 +13,18 @@
   <%- include('./navbar.ejs') %>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg1" data-slide-to="0"></li>
-      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg2" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" id="#carouselSlideImg3" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item active" id="#carouselSlideImg1">
         <img src="/images/test-img1.jpg" class="d-block w-100" alt="Test Image number one">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" id="#carouselSlideImg2">
         <img src="/images/test-img2.jpg" class="d-block w-100" alt="Test Image number two">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item" id="#carouselSlideImg3">
         <img src="/images/test-img3.jpg" class="d-block w-100" alt="Test Image number three">
       </div>
     </div>
@@ -44,20 +44,26 @@
   //console.log(carousel.getAttribute("class"));
   let nextButton = document.getElementById("#next");
   nextButton.addEventListener("click", carouselClick);
-  let pos = 0;
+  let pos = 1;
   function carouselClick() {
     let carouselAr = ["#carouselSlideImg1", "#carouselSlideImg2", "#carouselSlideImg3"];
       const carousel = document.getElementById(carouselAr[pos]);
-      carousel.setAttribute("class", "active");
+      carousel.setAttribute("class", "carousel-item active");
       if(pos > 0) {
       const preCarousel = document.getElementById(carouselAr[pos-1]);
-      preCarousel.removeAttribute("class");
+      preCarousel.removeAttribute("class", "active");
+      preCarousel.setAttribute("class", "carousel-item");
       }
       pos++;
-      if(pos == carousel.length-1) {
+      // if (pos > 1) {
+      //   pos = 0;
+      // }
+      if(pos === carouselAr.length) {
         const finalCarousel = document.getElementById(carouselAr[pos]);
-        finalCarousel.removeAttribute("class");
-        pos = 0;
+        finalCarousel.removeAttribute("class", "active");
+        finalCarousel.setAttribute("class", "carousel-item");
+        //finalCarousel.removeAttribute("id",carouselAr[pos]);
+        pos = 1;
       }
   }
   </script>
