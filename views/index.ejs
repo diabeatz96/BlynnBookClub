@@ -1,70 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="app.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="app.css" />
     <title>Hello There</title>
-</head>
-<body>
-  <%- include('./navbar.ejs') %>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active" id="#carouselSlideImg1">
-        <img src="/images/test-img1.jpg" class="d-block w-100" alt="Test Image number one">
+  </head>
+  <body>
+    <%- include('./navbar.ejs') %>
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="#carouselSlideImg1">
+          <img
+            src="/images/test-img1.jpg"
+            class="d-block w-100"
+            alt="Test Image number one"
+          />
+        </div>
+        <div class="carousel-item" id="#carouselSlideImg2">
+          <img
+            src="/images/test-img2.jpg"
+            class="d-block w-100"
+            alt="Test Image number two"
+          />
+        </div>
+        <div class="carousel-item" id="#carouselSlideImg3">
+          <img
+            src="/images/test-img3.jpg"
+            class="d-block w-100"
+            alt="Test Image number three"
+          />
+        </div>
       </div>
-      <div class="carousel-item" id="#carouselSlideImg2">
-        <img src="/images/test-img2.jpg" class="d-block w-100" alt="Test Image number two">
-      </div>
-      <div class="carousel-item" id="#carouselSlideImg3">
-        <img src="/images/test-img3.jpg" class="d-block w-100" alt="Test Image number three">
-      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <!-- <span class="sr-only">Previous</span> -->
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only" id="#next">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <!-- <span class="sr-only">Previous</span> -->
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only" id="#next">Next</span>
-    </a>
-  </div>
-</body>
-<script>
-  //const carousel = document.getElementById(carouselAr[1]);
-  //carousel.setAttribute("class", "active");
-  //console.log(carousel.getAttribute("class"));
-  let nextButton = document.getElementById("#next");
-  nextButton.addEventListener("click", carouselClick);
-  let pos = 1;
-  function carouselClick() {
-    let carouselAr = ["#carouselSlideImg1", "#carouselSlideImg2", "#carouselSlideImg3"];
-      const carousel = document.getElementById(carouselAr[pos]);
+  </body>
+  <script>
+    let nextButton = document.getElementById("#next");
+    nextButton.addEventListener("click", carouselClick);
+    let pos = 0;
+    let carouselAr = [
+      "#carouselSlideImg1",
+      "#carouselSlideImg2",
+      "#carouselSlideImg3",
+    ];
+
+    let preCarousel = document.getElementById(carouselAr[pos - 1]);
+    let finalCarousel = document.getElementById(carouselAr[carouselAr.length - 1]);
+    let carousel = document.getElementById(carouselAr[pos]);
+
+    function carouselClick() {
       carousel.setAttribute("class", "carousel-item active");
-      if(pos > 0) {
-      const preCarousel = document.getElementById(carouselAr[pos-1]);
-      preCarousel.removeAttribute("class", "active");
-      preCarousel.setAttribute("class", "carousel-item");
-      }
       pos++;
-      // if (pos > 1) {
-      //   pos = 0;
-      // }
-      if(pos === carouselAr.length) {
-        const finalCarousel = document.getElementById(carouselAr[pos]);
-        finalCarousel.removeAttribute("class", "active");
-        finalCarousel.setAttribute("class", "carousel-item");
-        //finalCarousel.removeAttribute("id",carouselAr[pos]);
-        pos = 1;
+      if (pos > 0) {
+        preCarousel.setAttribute("class", "carousel-item active");
+        carousel.removeAttribute("class", "carousel-item active");
       }
-  }
+      if (pos === carouselAr.length - 1) {
+        finalCarousel.setAttribute("class", "carousel-item active");
+        preCarousel.removeAttribute("class", "carousel-item active");
+        // carousel = document.getElementById(carouselAr[1]);
+        // carousel.removeAttribute("class", "active");
+        // carousel.setAttribute("class", "carousel-item");
+        pos = 0;
+      }
+    }
   </script>
 </html>
