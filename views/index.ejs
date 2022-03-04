@@ -66,13 +66,13 @@
         role="button"
         data-slide="next"
       >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only" id="#next">Next</span>
+        <span class="carousel-control-next-icon" id="next" aria-hidden="true" ></span>
+        <span class="sr-only">Next</span>
       </a>
     </div>
   </body>
   <script>
-    let nextButton = document.getElementById("#next");
+    let nextButton = document.getElementById("next");
     nextButton.addEventListener("click", carouselClick);
     let pos = 0;
     let carouselAr = [
@@ -81,24 +81,23 @@
       "#carouselSlideImg3",
     ];
 
-    let preCarousel = document.getElementById(carouselAr[pos - 1]);
-    let finalCarousel = document.getElementById(carouselAr[carouselAr.length - 1]);
+
     let carousel = document.getElementById(carouselAr[pos]);
 
     function carouselClick() {
-      carousel.setAttribute("class", "carousel-item active");
-      pos++;
-      if (pos > 0) {
-        preCarousel.setAttribute("class", "carousel-item active");
-        carousel.removeAttribute("class", "carousel-item active");
-      }
+      const isActive = carousel.classList.contains("active");
+
       if (pos === carouselAr.length - 1) {
-        finalCarousel.setAttribute("class", "carousel-item active");
-        preCarousel.removeAttribute("class", "carousel-item active");
-        // carousel = document.getElementById(carouselAr[1]);
-        // carousel.removeAttribute("class", "active");
-        // carousel.setAttribute("class", "carousel-item");
+        isActive ? carousel.classList.remove("active") : console.log("Failure");
         pos = 0;
+        carousel = document.getElementById(carouselAr[pos]);
+        carousel.classList.add("active");
+      } else if (pos >= 0) {
+        console.log(pos);
+        isActive ? carousel.classList.remove("active") : console.log("Failure");
+        pos++;
+        carousel = document.getElementById(carouselAr[pos]);
+        carousel.classList.add("active");
       }
     }
   </script>
