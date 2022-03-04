@@ -32,21 +32,21 @@
         <div class="carousel-item active" id="#carouselSlideImg1">
           <img
             src="/images/test-img1.jpg"
-            class="d-block w-100"
+            class="img d-block"
             alt="Test Image number one"
           />
         </div>
         <div class="carousel-item" id="#carouselSlideImg2">
           <img
             src="/images/test-img2.jpg"
-            class="d-block w-100"
+            class="img d-block"
             alt="Test Image number two"
           />
         </div>
         <div class="carousel-item" id="#carouselSlideImg3">
           <img
             src="/images/test-img3.jpg"
-            class="d-block w-100"
+            class="img d-block"
             alt="Test Image number three"
           />
         </div>
@@ -112,7 +112,7 @@
         pos = carouselAr.length-1;
         carousel = document.getElementById(carouselAr[pos]);
         carousel.classList.add("active");
-      } else if (pos >= 0) {
+      } else if (pos > 0) {
         console.log(pos);
         isActive ? carousel.classList.remove("active") : console.log("Failure");
         pos--;
