@@ -36,3 +36,11 @@ h1 img {
     height: 80vh;
     margin: 0 auto;
 }
+
+.carousel-control-prev-icon {
+    border: solid white 1px;
+}
+
+.carousel-control-next-icon {
+    border: solid white 1px;
+}
