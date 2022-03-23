@@ -48,3 +48,29 @@ h1 img {
 .carousel-control-next-icon {
     border: solid white 1px;
 }
+
+.latest-reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.book {
+    border: solid white 1px;
+    width: 200px;
+    height: 200px;
+}
+
+.book-description {
+    /* border: solid white 1px; */
+    /* transform: translateY(250px); */
+    color: white;
+}
+
+.book-img {
+    /* transform: translate(-1px, -41px); */
+    width: 200px;
+    height: 200px;
+}
