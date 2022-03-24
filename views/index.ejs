@@ -84,26 +84,78 @@
           class="book-img"
           src="https://upload.wikimedia.org/wikipedia/en/a/a7/In_the_Miso_Soup_Cover.jpg"
         />
-        <p class="book-description">In the Miso Soup tells of Frank, an overweight American tourist who has hired Kenji to take him on a guided tour of Tokyo’s sleazy nightlife</p>
+        <p class="book-description">In the Miso Soup tells of Frank, an overweight American tourist who has hired Kenji to take him<span id="dots1">...</span><span id="more1"> on a guided tour of Tokyo’s sleazy nightlife</span></p>
+        <p onclick="myFunction1()" id="myBtn1">Read more</p>
       </div>
       <div class="book">
         <img
           class="book-img"
           src="https://images-na.ssl-images-amazon.com/images/I/71UZvIul-+L.jpg"
         />
-        <p class="book-description">Full of misgivings, a young woman travels with her new boyfriend to his parents' secluded farm. Upon arriving, she comes to question everything she thought she knew about him, and herself.</p>
+        <p class="book-description">Full of misgivings, a young woman travels with her new boyfriend to his parents' secluded farm.<span id="dots2">...</span><span id="more2"> Upon arriving, she comes to question everything she thought she knew about him, and herself.</span></p>
+        <p onclick="myFunction2()" id="myBtn2">Read more</p>
       </div>
       <div class="book">
         <img
           class="book-img"
           src="https://upload.wikimedia.org/wikipedia/en/f/f5/PerfumeSuskind.jpg"
         />
-        <p class="book-description">Perfume: The Story of a Murderer (German: Das Parfum: Die Geschichte eines Mörders [das paʁˈfœ̃ː diː ɡəˈʃɪçtə ˈʔaɪnəs ˈmœʁdɐs] (audio speaker iconlisten)) is a 1985 literary historical fantasy novel by German writer Patrick Süskind. The novel explores the sense of smell and its relationship with the emotional meanings that scents may have.</p>
+        <p class="book-description">Perfume: The Story of a Murderer (German: Das Parfum: Die Geschichte eines Mörders<span id="dots3">...</span><span id="more3"> [das paʁˈfœ̃ː diː ɡəˈʃɪçtə ˈʔaɪnəs ˈmœʁdɐs] (audio speaker iconlisten)) is a 1985 literary historical fantasy novel by German writer Patrick Süskind. The novel explores the sense of smell and its relationship with the emotional meanings that scents may have.</span></p>
+        <p onclick="myFunction3()" id="myBtn3">Read more</p>
       </div>
     </div>
   </body>
-  <script src="/scripts/carousel.js"></script>
+  <script src="/scripts/carousel.js">
+  </script>
+  <script>
+        function myFunction1() {
+  var dots = document.getElementById("dots1");
+  var moreText = document.getElementById("more1");
+  var btnText = document.getElementById("myBtn1");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+
+function myFunction2() {
+  var dots = document.getElementById("dots2");
+  var moreText = document.getElementById("more2");
+  var btnText = document.getElementById("myBtn2");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+
+function myFunction3() {
+  var dots = document.getElementById("dots3");
+  var moreText = document.getElementById("more3");
+  var btnText = document.getElementById("myBtn3");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+  </script>
   <footer>
-    
   </footer>
 </html>
