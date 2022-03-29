@@ -106,3 +106,28 @@ h1 img {
 #more3 {
     display: none;
 }
+
+.person1:hover {
+  width: 100vw;
+  z-index: 2;
+}
+
+.person2 {
+  z-index: 1;
+}
+
+.person3 {
+  z-index: 1;
+}
+
+.person4 {
+  z-index: 1;
+}
+
+.person5 {
+  z-index: 1;
+}
+
+.person6 {
+  z-index: 1;
+}
