@@ -75,59 +75,22 @@ h1 img {
 }
 
 .book-img {
-  /* transform: translate(-1px, -41px); */
-  width: 200px;
-  height: 200px;
+    /* transform: translate(-1px, -41px); */
+    width: 200px;
+    height: 200px;
 }
 
-#myBtn1 {
-    color: red;
-    text-decoration: underline;
+#navLink1:hover {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px 2px ghostwhite;
 }
 
-#myBtn2 {
-    color: red;
-    text-decoration: underline;
+#navLink2:hover {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px 2px ghostwhite;
 }
 
-#myBtn3 {
-    color: red;
-    text-decoration: underline;
-}
-
-#more1 {
-    display: none;
-}
-
-#more2 {
-    display: none;
-}
-
-#more3 {
-    display: none;
-}
-
-.person1:hover {
-  width: 100vw;
-  z-index: 2;
-}
-
-.person2 {
-  z-index: 1;
-}
-
-.person3 {
-  z-index: 1;
-}
-
-.person4 {
-  z-index: 1;
-}
-
-.person5 {
-  z-index: 1;
-}
-
-.person6 {
-  z-index: 1;
+#navLink3:hover {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px 2px ghostwhite;
 }
