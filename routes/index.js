@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 
-/* For now we will insert Book Objects to add new book descriptions. */
+/* For now we will insert Book Objects to add new book descriptions. Dogs */
 
 
 const tempBookObjects = [
